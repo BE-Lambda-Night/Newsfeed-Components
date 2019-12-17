@@ -112,3 +112,81 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+const articlesDiv = document.querySelector('div.articles')
+// console.log(articlesDiv)
+
+function articleCreator(articleObject) {
+  
+  const article = document.createElement('div')
+  article.classList.add('article')
+  // // this will add scroll to the content when not large enough since this is not responsive at all
+  // article.style.overflow = 'scroll'
+
+  const header = document.createElement('h2')
+  header.textContent = articleObject.title
+
+  const date = document.createElement('p')
+  date.classList.add('date')
+  date.textContent = articleObject.date
+
+  const paragraphOne = document.createElement('p')
+  paragraphOne.textContent = articleObject.firstParagraph
+
+  const paragraphTwo = document.createElement('p')
+  paragraphTwo.textContent = articleObject.secondParagraph
+
+  const paragraphThree = document.createElement('p')
+  paragraphThree.textContent = articleObject.thirdParagraph
+
+  const expand = document.createElement('span')
+  expand.classList.add('expandButton')
+  expand.textContent = 'expand'
+
+  article.appendChild(header)
+  article.appendChild(date)
+  article.appendChild(paragraphOne)
+  article.appendChild(paragraphTwo)
+  article.appendChild(paragraphThree)
+  article.appendChild(expand)
+
+  expand.addEventListener('click', () => {
+    console.log('Expand has been clicked!')
+    article.classList.toggle('article-open')
+    if(expand.innerHTML != "close"){
+      expand.innerText = "close"
+    }
+  })
+
+  return article
+  // console.log(article)
+}
+
+data.map(function(dataArticle){
+  articlesDiv.appendChild(articleCreator(dataArticle))
+})
+
+const newArticles = [{
+  title: `My New Article`,
+  date: `December 10, 2019`,
+  firstParagraph: `I'm a short paragraph.`,
+  secondParagraph: `I'm even shorter.`,
+  thirdParagraph: `Shortest.`,
+  },
+  {
+    title: `Bryce Evans does assignment as TL`,
+    date: `December 16, 2019`,
+    firstParagraph: `Bryce Evans, now a TL does this assignment again.`,
+    secondParagraph: `Time time it takes a lot less time.`,
+    thirdParagraph: `This time it makes a lot more sense (go figure).`,
+  },
+  {
+    title: `Three reasons why the Democrats\' Blue Wall crumbled`,
+    date: `December 16th, 2019`,
+    firstParagraph: `Trump was the first Republican to carry Michigan since George H.W. Bush won it in 1988 against Michael Dukakis.`,
+    secondParagraph: `The biggest reason Clinton’s failure in the state was her inability to move black voters — historically the most loyal voting bloc for Democrats — to the polls..`,
+    thirdParagraph: `Theo Walker is a 26-year-old father of two in Detroit who has never voted. He has a fundamental distrust of the system. "The city isn’t going to do any better whether he votes or not," Walker said.`,
+  }]
+
+  newArticles.map((newArticle) => {
+    return articlesDiv.appendChild(articleCreator(newArticle))
+  })
