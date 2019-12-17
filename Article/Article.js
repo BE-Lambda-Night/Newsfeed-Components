@@ -113,7 +113,7 @@ const data = [
 
 */
 const articlesDiv = document.querySelector('div.articles')
-console.log(articlesDiv)
+// console.log(articlesDiv)
 
 function articleCreator(articleObject) {
   
@@ -158,7 +158,7 @@ function articleCreator(articleObject) {
   })
 
   return article
-  console.log(article)
+  // console.log(article)
 }
 
 data.map(function(dataArticle){
@@ -167,21 +167,21 @@ data.map(function(dataArticle){
 
 const newArticles = [{
   title: `My New Article`,
-  date: `10, December 2019`,
+  date: `December 10, 2019`,
   firstParagraph: `I'm a short paragraph.`,
   secondParagraph: `I'm even shorter.`,
   thirdParagraph: `Shortest.`,
   },
   {
     title: `Bryce Evans does assignment as TL`,
-    date: `16, December 2019`,
+    date: `December 16, 2019`,
     firstParagraph: `Bryce Evans, now a TL does this assignment again.`,
     secondParagraph: `Time time it takes a lot less time.`,
     thirdParagraph: `This time it makes a lot more sense (go figure).`,
   },
   {
     title: `Three reasons why the Democrats\' Blue Wall crumbled`,
-    date: `16, December 2019`,
+    date: `December 16th, 2019`,
     firstParagraph: `Trump was the first Republican to carry Michigan since George H.W. Bush won it in 1988 against Michael Dukakis.`,
     secondParagraph: `The biggest reason Clinton’s failure in the state was her inability to move black voters — historically the most loyal voting bloc for Democrats — to the polls..`,
     thirdParagraph: `Theo Walker is a 26-year-old father of two in Detroit who has never voted. He has a fundamental distrust of the system. "The city isn’t going to do any better whether he votes or not," Walker said.`,
